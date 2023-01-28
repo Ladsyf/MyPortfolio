@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" media="screen" href="src/css/style.css" />
+        <link rel="stylesheet" media="screen" href="src/css/meSec.css" />
+        <link rel="stylesheet" media="screen" href="src/css/aboutMeSec.css" />
+        <link rel="stylesheet" media="screen" href="src/css/projectSec.css" />
+        <link rel="stylesheet" media="screen" href="src/css/contactSec.css" />
+        <script src="src/js/script.js"></script>
+        <title>Almar Javier</title>
+    </head>
+
+    <body class = "">
+        <section id="meSec">
+            <label class="switch">
+                <input id = "toggleDark" type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <div id="wrapper">
+                <div id="box">
+                    <div id="intro">
+                        <span id="iam"> I am </span>
+                        <span id="ans">
+                            <span id="myName"> Almar Javier </span>
+                            <p id="role">a Full Stack Web Developer</p>
+                        </span>
+                    </div>
+                    <hr id="hr" />
+                    <div id="bar">
+                        <div id="navigation" class="navigation">
+                            <a href="#meSec" class="navBTN"> Home </a>
+                            <a href="#aboutMeSec" class="navBTN"> About me </a>
+                            <a href="#projectsSec" class="navBTN"> Projects </a>
+                            <a href="#contactSec" class="navBTN"> Contact </a>
+                        </div>
+                    </div>
+                </div>
+                <div id = "myPicContainer">
+                    <div id = "picBackground"></div>
+                    <img id="mejpg" src="src/img/IMG_9058.png" />
+                </div>
+            </div>
+        </section>
+        <section id="aboutMeSec">
+            <div></div>
+        </section>
+        <section id="projectsSec"></section>
+        <div id="contactSec"></div>
+
+        <script>
+            // When the user scrolls the page, execute checkPosition
+            window.onscroll = function () {
+                checkPosition();
+            };
+
+            // Check if the div has reached the top of the screen
+            function checkPosition() {
+                // Get the div element
+                var div = document.getElementById("hr");
+
+                var rect = div.getBoundingClientRect();
+                var nav = document.getElementById("bar");
+                if (rect.top < 0) {
+                    if (!nav.classList.contains("sticky")) {
+                        nav.classList.add("sticky");
+                    }
+                } else if (nav.classList.contains("sticky") && rect.top >= 0) {
+                    nav.classList.remove("sticky");
+                }
+            }
+        </script>
+        <script>
+            const darkToggleBTN = document.querySelector('#toggleDark');
+            function checkIfDark(){
+                isDark = localStorage.darkMode;
+                if(isDark == "true"){
+                    document.querySelector(':root').classList.add('dark');
+                    darkToggleBTN.checked = "checked";
+                }
+                else{
+                    document.querySelector(':root').classList.remove('dark');
+                }
+            }
+            checkIfDark();
+            function toggleDarkMode(){
+                isDarkMode = darkToggleBTN.checked;
+                if(isDarkMode){
+                    document.querySelector(':root').classList.add('dark');
+                    localStorage.darkMode = true;
+                }
+                else{
+                    document.querySelector(':root').classList.remove('dark');
+                    localStorage.darkMode = false;
+                }
+            }
+            darkToggleBTN.addEventListener('click', toggleDarkMode);
+        </script>
+    </body>
+</html>

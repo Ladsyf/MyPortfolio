@@ -1,0 +1,92 @@
+#meSec {
+    background: --setBackground;
+    position: relative;
+    height: calc(100vh + 80px);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+} 
+
+#wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#box {
+    position: relative;
+}
+
+#intro {
+    display: flex;
+    flex-direction: row;
+}
+
+#ans {
+    margin-left: 10px;
+}
+
+#iam,
+#myName,
+#role {
+    padding: 0;
+    margin: 0;
+}
+
+#iam {
+    font-size: 100px;
+}
+
+#myName {
+    font-size: 60px;
+    margin-top: 15px;
+    margin-bottom: -16px;
+}
+
+#role {
+    font-size: 26.6px;
+}
+
+#navigation {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    transition: top 0.3s;
+}
+
+.navBTN {
+    color: var(--grayer);
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.navBTN:hover {
+    color: #353535;
+    transition: 0.2s;
+}
+
+#myPicContainer {
+    position: relative;
+    --height: 400px;
+    --width: 400px;
+}
+#picBackground{
+    background-color: var(--gray);
+    position:absolute;
+    top: 15px;
+    left: 10px;
+    height: calc(var(--height) - 25px);
+    width: calc(var(--width) - 25px);
+    border-radius: 99999px;
+}
+
+#mejpg {
+    height: var(--height);
+    width: var(--width);
+    object-fit: cover;
+    position: absolute;
+}

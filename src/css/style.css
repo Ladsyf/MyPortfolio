@@ -1,0 +1,144 @@
+/* asdasd
+8CC739 - kulay matcha
+085DAD - blue na medyo dark
+21BEDE - blue rin medyo ligh
+31C3E7 - blue na medyo light
+ADB6B5 - gray
+*/
+:root{
+  --setBackground: #fff;
+  --matcha: #8CC739;
+  --blue-dark: #085DAD;
+  --blue-light: #21BEDE;
+  --blue-light2: #31C3E7;
+  --gray: #ADB6B5;
+  --grayer: #707070;
+}
+.dark {
+  --setBackground: rgb(34, 34, 34);
+  --matcha: #8CC739;
+  --blue-dark: #085DAD;
+  --blue-light: #21BEDE;
+  --blue-light2: #31C3E7;
+  --gray: #ADB6B5;
+  --grayer: #e0e0e0;
+}
+@font-face {
+  font-family: fa;
+  src: url('../fonts/Segoe\ UI.ttf');
+}
+
+html,body{ 
+  transition: .5s;
+  margin:0;
+  font-family:'fa';
+  background-color: var(--setBackground);
+}
+
+
+html{
+  scroll-behavior: smooth;
+}
+p, span {
+  color: var(--grayer);
+  display: block;
+}
+button {
+  border: 0;
+  background: none;
+}
+button {
+  text-decoration: none;
+}
+button:hover{
+  cursor: pointer;
+}
+section {
+  height: 100vh;
+}
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--grayer);
+}
+
+.sticky {
+  background-color: var(--setBackground);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  top: 0;
+  left:0;
+  width: 100%;
+  z-index: 20;
+}
+.sticky div {
+  width: 481.203px;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}

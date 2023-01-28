@@ -1,0 +1,6 @@
+#projectsSec {
+    background: #fff;
+    position: relative;
+    height: calc(100vh + 80px);
+    border-radius: 10px;
+}
