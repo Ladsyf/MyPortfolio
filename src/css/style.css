@@ -7,6 +7,7 @@ ADB6B5 - gray
 */
 :root{
   --setBackground: #fff;
+  --setBackground2: rgb(224, 224, 224);
   --matcha: #8CC739;
   --blue-dark: #085DAD;
   --blue-light: #21BEDE;
@@ -16,6 +17,7 @@ ADB6B5 - gray
 }
 .dark {
   --setBackground: rgb(34, 34, 34);
+  --setBackground2: rgb(41, 41, 41);
   --matcha: #8CC739;
   --blue-dark: #085DAD;
   --blue-light: #21BEDE;
@@ -24,20 +26,36 @@ ADB6B5 - gray
   --grayer: #e0e0e0;
 }
 @font-face {
+  font-family: gothamLight;
+  src: url('../fonts/GothamLight.ttf');
+}
+@font-face {
+  font-family: gothamBook;
+  src: url('../fonts/GothamBook.ttf');
+}
+@font-face {
+  font-family: gothamBold;
+  src: url('../fonts/GothamBold.ttf');
+}
+@font-face {
   font-family: fa;
   src: url('../fonts/Segoe\ UI.ttf');
 }
 
 html,body{ 
-  transition: .5s;
   margin:0;
-  font-family:'fa';
+  padding: 0;
+  font-family:'gothamLight';
   background-color: var(--setBackground);
 }
 
-
 html{
   scroll-behavior: smooth;
+}
+
+*{
+  -webkit-tap-highlight-color: transparent;
+  transition: .5s;
 }
 p, span {
   color: var(--grayer);
@@ -54,7 +72,11 @@ button:hover{
   cursor: pointer;
 }
 section {
+  background-color: var(--setBackground);
   height: 100vh;
+}
+section:nth-child(odd){
+  background-color: var(--setBackground2);
 }
 #particles-js {
   position: fixed;
@@ -65,19 +87,11 @@ section {
   z-index: -1;
   background-color: var(--grayer);
 }
-
 .sticky {
-  background-color: var(--setBackground);
   position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  top: 0;
-  left:0;
-  width: 100%;
-  z-index: 20;
+  top: 40px;
+  z-index: 60;
+  transition: .5s;
 }
 .sticky div {
   width: 481.203px;
@@ -87,58 +101,128 @@ a{
   text-decoration: none;
 }
 
-
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+.myLogo g{
+  fill: var(--grayer);
+  transition: .3s;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
+.navBar{
+  display: flex;
+  padding: 40px 40px;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top:0;
+  transition: 0s;
+  /* background-color: #31C3E7; */
+  width: calc(100% - 80px);
+  z-index: 50;
+}
+.navStick {
+  position:fixed;
+  padding: 30px 40px;
+  background-color: var(--setBackground);
+  transition: .3s;
+}
+.leftNavPane{
+  height:fit-content;
+  width: fit-content;
+  display: flex;
+}
+
+label {
+  width:65px;
+  height:32.5px;
+  position: relative;
+  display: block;
+  background: var(--gray);
+  border-radius: 200px;
+  cursor: pointer;
+}
+label:after {
+  content: "";
+  width: 43%;
+  height: 85%;
+  position: absolute;
+  top:7%;
+  left:4%;
+  background: linear-gradient(180deg,#ffcc89,#d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+input {
   width: 0;
   height: 0;
+  visibility: hidden;
 }
-
-/* The slider */
-.slider {
+input:checked + label {
+  background: var(--gray);
+}
+input:checked + label:after {
+  left:96%;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg,#777,#3a3a3a);
+}
+label, label:after {
+  transition: 0.2s
+}
+label:active:after{ 
+  width: 50%; 
+}
+label svg {
   position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  width: 22%;
+  top:28%;
+  z-index: 100;
+}
+label svg.sun {
+  left: 14%;
+  fill:#fff;
+  transition: 0.3s;
+}
+label svg.moon {
+  width: 17%;
+  top: 33%;
+  right: 16%;
+  fill:#7e7e7e;
+  transition: 0.3s;
+}
+input:checked + label svg.sun {
+  fill:rgb(48, 48, 48);
+}
+input:checked + label svg.moon {
+  fill:#fff;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+.socials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+.socialIcon, .socialIcon > *{
+  --wh: 30px;
+  width:var(--wh);
+  height:var(--wh);
+  margin: 0px 10px;
+  fill: var(--gray);
 }
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+.socials a {
+  height: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+@media only screen and (max-width: 1100px) {
+  .socials{
+    margin-right: 20px;
+  }
+  .socialIcon, .socialIcon > *{
+    --wh: 20px;
+  }
+  label {
+    width: 50px;
+    height: 25px;
+  }
 }

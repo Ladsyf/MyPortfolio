@@ -1,13 +1,11 @@
 #meSec {
-    background: --setBackground;
     position: relative;
-    height: calc(100vh + 80px);
+    height: 100vh;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 } 
 
 #wrapper {
-    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
@@ -17,11 +15,15 @@
 
 #box {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
 }
-
 #intro {
     display: flex;
     flex-direction: row;
+    font-family: 'fa';
 }
 
 #ans {
@@ -48,17 +50,16 @@
 #role {
     font-size: 26.6px;
 }
-
 #navigation {
     display: flex;
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
-    transition: top 0.3s;
 }
 
 .navBTN {
+    font-family: 'gothamBook';
     color: var(--grayer);
     font-size: 16px;
     transition: 0.2s;
@@ -69,24 +70,119 @@
     transition: 0.2s;
 }
 
+#hr {
+    width: 100%;
+}
 #myPicContainer {
-    position: relative;
-    --height: 400px;
+    position: absolute;
+    bottom:0;
+    right: 0;
     --width: 400px;
+    --picWidth: 400px;
+    --picRight: 13px;
+    --picBot: -15px;
+    height: var(--width);
+    width: var(--width);
+    transition: .3s;
+
+}
+#myPicContainerParent{
+    position: relative;
+    display: flex;
+    height:400px;
+    width: 400px;
+    flex-wrap: wrap;
+    margin-left: 50px;
 }
 #picBackground{
     background-color: var(--gray);
     position:absolute;
-    top: 15px;
-    left: 10px;
-    height: calc(var(--height) - 25px);
+    bottom: 0px;
+    left: 0px;
+    height: calc(var(--width) - 25px);
     width: calc(var(--width) - 25px);
     border-radius: 99999px;
+    transition: .3s;
 }
 
 #mejpg {
-    height: var(--height);
-    width: var(--width);
+    height: var(--picWidth);
+    width: var(--picWidth);
+    bottom: var(--picBot);
+    right: var(--picRight);
     object-fit: cover;
     position: absolute;
+    transition: .3s;
 }
+
+#myPicContainer:hover{
+    --width: 410px;
+    --picWidth: 425px;
+    --picRight: 11px;
+    --picBot: -20px;
+}
+
+@media only screen and (max-width: 1300px) {
+    #myPicContainer{
+        --width: 300px;
+        --picWidth: 300px;
+        --picRight: 17.5px;
+        --picBot: -10px;
+    }
+    #myPicContainer:hover{
+        --width: 310px;
+        --picWidth: 325px;
+        --picRight: 14px;
+        --picBot: -12px;
+    }
+    #myPicContainerParent{
+        width: 300px;
+        height: 300px;
+    }
+
+    #picBackground{
+        bottom: 0px;
+        left: 0px;
+    }
+    #mejpg{
+        height: calc(var(--picWidth) - 15px);
+        width: calc(var(--picWidth) - 15px);
+    }
+    #iam {
+        font-size: 80px;
+    }
+    
+    #myName {
+        font-size: 48px;
+        margin-top: 15px;
+        margin-bottom: -16px;
+    }
+    #navigation {
+        display: flex;
+        justify-content: space-between;
+
+    }
+    #role {
+        font-size: 21.28px;
+    }
+    .sticky {
+        position: fixed;
+        top: 40px;
+        z-index: 60;
+        transition: .5s;
+      }
+      .sticky div {
+        width: 385.55px;
+      }
+}
+@media only screen and (max-width: 1100px) {
+    .myLogo{
+        width: 70pt;
+    }
+}
+@media only screen and (max-width: 996px) {
+    .myLogo{
+        width: 0pt;
+    }
+}
+/* 770 pinakamababa dapat */
