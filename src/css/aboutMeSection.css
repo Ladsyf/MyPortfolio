@@ -1,0 +1,76 @@
+#aboutMeSection { 
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    min-height: fit-content;
+    padding-left: 140px;
+    padding-right: 140px;
+}
+
+.titleContainer {
+    width: 100%;
+    text-align: center;
+    padding: 100px 0px;
+}
+.aboutContent {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding-top: 80px;
+}
+.aboutPane{
+    font-family: 'gothamLight';
+    color: var(--grayer);
+    text-align: left;
+    font-size: 15px;
+    line-height: 35px;
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 600px;
+}
+
+.downloadCVBTN{
+    font-family: 'gothamBold';
+    color: var(--setBackground2);
+    background-color: var(--grayer);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    gap: 8px;
+}
+
+.downloadCVBTN:hover {
+    background-color: var(--dark-color);
+    transition: .2s;
+}
+
+.arrowDown{
+    height: 18px;
+    width: 18px;
+}
+.arrowDown > * {
+    fill: var(--setBackground2);
+}
+.aboutMeImgContainer{
+    width: 100%;
+    max-height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.aboutMeJpg {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: 100% 30%;
+    transition: .3s;
+}
+.aboutMeJpg:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}

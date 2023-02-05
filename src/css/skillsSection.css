@@ -1,0 +1,73 @@
+#skillsSection {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: fit-content;
+}
+.skillsContent {
+    display:flex;
+    padding: 80px;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: nowrap;
+    margin: auto;
+}
+.skillSet{
+    width: 400px;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: var(--setBackground3);
+}
+.skillTitle {
+    color: var(--grayer);
+    font-family: 'gothamMedium';
+    width: 100%;
+    display:flex;
+    justify-content: start;
+}
+.skills {
+    display:flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+    padding-top: 20px;
+}
+.skill {
+    display: flex;
+    width:33.33%;
+    aspect-ratio: 1/1;
+    color: var(--grayer);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'gothamBook';
+    font-size: 12px;
+    gap:4px;
+}
+.skillIcon {
+    fill: var(--grayer);
+    width: 40%;
+    aspect-ratio: 1/1;
+}
+.skillIcon > * {
+    fill: var(--grayer);
+}
+
+@media only screen and (max-width: 1100px) {
+    .skillsContent {
+        flex-direction: column;
+    }
+    .skill {
+        width: 25%;
+    }
+    .skillIcon {
+        width: 30%;
+    }
+
+}
